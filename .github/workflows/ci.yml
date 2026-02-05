@@ -1,4 +1,4 @@
-name: CI-CD Docker PHP MySQL
+name: CI/CD - Docker PHP MySQL
 
 on:
   push:
@@ -21,10 +21,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and Push Docker Image
+      - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: ./app
           push: true
-          tags: salsabillalcn/my-wastu:latest
-
+          tags: salsabillacn/my-wastu:latest
